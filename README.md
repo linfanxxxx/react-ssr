@@ -9,3 +9,6 @@
 > yarn 
 
 > yarn start 
+
+## v0.2.0 通过jsx代替ejs作为渲染模板
+
