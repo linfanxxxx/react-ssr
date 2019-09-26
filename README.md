@@ -12,3 +12,8 @@
 
 ## v0.2.0 通过jsx代替ejs作为渲染模板
 
+> yarn 
+
+> npx babel src/index.jsx -o src/index.js
+
+> yarn start
