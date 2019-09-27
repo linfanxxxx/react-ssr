@@ -12,8 +12,11 @@
 
 ## v0.2.0 通过jsx代替ejs作为渲染模板
 
+用jsx替代ejs作为渲染模板，但是需要先通过babel把jsx转为es5的js。最终index.js导出html字符串，作为response返回。
+
 > yarn 
 
 > npx babel src/index.jsx -o src/index.js
 
 > yarn start
+
