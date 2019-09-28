@@ -1,13 +1,15 @@
 const http = require('http');
 const routes = require('./src/router');
 const { renderToString } = require('react-dom/server');
+const components = require('./componentsMap');
+const React = require('react');
 
 const fetchData = async () => {
-    return await Promise((resolove) => {
+    return await new Promise((resolove) => {
         setTimeout(()=>{
             resolove({
                 title: 'this is Index Page',
-                url: '/detail',
+                url: '/list',
                 linkName: 'go to List Page',
             })
         }, 2000)
@@ -15,20 +17,15 @@ const fetchData = async () => {
 }
 
 http.createServer(async (req, res) => {
-    routes.forEach(item => {
+    routes.forEach(async item => {
         if(item.path === req.url) {
             res.writeHead(200, {
                 'Content-Type': 'text/html'
             });
+            const Component = components[item.component];
+            const data = await fetchData();
+            const reactHtml = renderToString(<Component data={data}/>);
             res.end(reactHtml);
         }
     })
-    console.log('get request');
-    if(req.url === '/abc') {
-    console.log('match url');
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-        res.end(reactHtml);
-    }
 }).listen(3000);

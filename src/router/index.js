@@ -3,17 +3,17 @@ const routes = [
     {
         path: '/',
         name: 'index',
-        component: `${path}/index`
+        component: `index`
     },
     {
         path: '/index',
         name: 'index',
-        component: `${path}/index`
+        component: `index`
     },
     {
         path: '/list',
         name: 'list',
-        component: `${path}/list`
+        component: `list`
     },
 ]
 module.exports = routes;

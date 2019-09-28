@@ -20,3 +20,14 @@
 
 > yarn start
 
+## v0.3.0 实现多页面跳转
+
+> yarn
+
+> npx babel app.js -o app-babel.js
+
+> npx babel src/pages/index/index.jsx -o src/pages/index/index.js
+
+> npx babel src/pages/index/list.jsx -o src/pages/index/list.js
+
+> node app-babel.js

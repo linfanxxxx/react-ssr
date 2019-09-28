@@ -1,13 +1,11 @@
-import React from 'react';
-
-
-// todo 怎么解决先把jsx通过babel转移后再转换为字符串
+const React = require('react');
 
 module.exports = (props) => {
+    const { data } = props;
     return (
         <div>
-            <h1>hello {this.props.title}</h1>
-            <a href={this.props.url}>{this.props.linkName}</a>
+            <h1>hello {data.title}</h1>
+            <a href={data.url}>{data.linkName}</a>
         </div>
     )
 }

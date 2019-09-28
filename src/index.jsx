@@ -14,4 +14,4 @@ const fetchData = function() {
     }
 }
 
-module.exports = renderToString(<Index data={fetchData()}/>)
+module.exports = renderToString(<Index data={fetchData()}/>) 
